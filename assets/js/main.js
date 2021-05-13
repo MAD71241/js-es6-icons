@@ -111,6 +111,7 @@ cardList.forEach(element => {
       flex-column
       justify-content-center
       align-items-center
+      ${element.type}
     "
     >
     <i class="${element.family} ${element.prefix}${element.name}"></i>
@@ -119,5 +120,6 @@ cardList.forEach(element => {
     );
     
 });
+
 
 

@@ -26,3 +26,18 @@ header h1 {
 .animal-card h6 {
     font-size: 10px;
 } */
+
+/* classi per tipo - JS */
+
+.animal {
+    color: blue;
+}
+.vegetable {
+    color: gold;
+}
+.user {
+    color: purple;
+}
+.animal h6, .vegetable h6, .user h6 {
+    color: black;
+}
