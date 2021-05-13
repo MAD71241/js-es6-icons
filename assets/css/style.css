@@ -1,6 +1,13 @@
 header h1 {
     color: #29B1DD;
 }
+
+select {
+    height: 15px;
+    font-size: 10px;
+}
+
+/* CLASSI GENERALI - BACKGROUND */
 .bg-sky {
     background-color: #29B1DD;
 }
@@ -17,16 +24,14 @@ header h1 {
 }
 
 .animal-card {
+    width: 300px;
     height: 100px;
     background-color: white;
+    margin: 1px;
 }
-/* .animal-card i{
-    font-size: 10px;
+.animal-card i{
+    font-size: 30px;
 }
-.animal-card h6 {
-    font-size: 10px;
-} */
-
 /* classi per tipo - JS */
 
 .animal {

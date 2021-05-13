@@ -104,12 +104,13 @@ Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disp
 
 
 //Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
-let iconSelect = document.getElementById("icon-selector");
-
+const iconSelect = document.getElementById("icon-selector");
+const cardSelect = document.getElementById("animal-card");
 iconSelect.addEventListener("change", function () {
+    cardSelect.innerHTML = "";
     if (iconSelect.value == "all") {
-        cardList.forEach(element => {
-            document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+        cardList.filter(element => {
+            cardSelect.insertAdjacentHTML("beforeend",
                 `      <div
             class="
               animal-card
@@ -128,9 +129,9 @@ iconSelect.addEventListener("change", function () {
 
         });
     } else if (iconSelect.value == "animal") {
-        cardList.forEach(element => {
+        cardList.filter(element => {
             if (element.type == "animal") {
-                document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+                cardSelect.insertAdjacentHTML("beforeend",
                     `      <div
                 class="
                   animal-card
@@ -151,9 +152,10 @@ iconSelect.addEventListener("change", function () {
 
     }
     else if (iconSelect.value == "vegetable") {
-        cardList.forEach(element => {
+        cardSelect.classList.add("justify-content-around");
+        cardList.filter(element => {
             if (element.type == "vegetable") {
-                document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+                cardSelect.insertAdjacentHTML("beforeend",
                     `      <div
                 class="
                   animal-card
@@ -174,9 +176,10 @@ iconSelect.addEventListener("change", function () {
 
     }
     else if (iconSelect.value == "user") {
-        cardList.forEach(element => {
+        cardSelect.classList.add("justify-content-around");
+        cardList.filter(element => {
             if (element.type == "user") {
-                document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+                cardSelect.insertAdjacentHTML("beforeend",
                     `      <div
                 class="
                   animal-card
