@@ -4,8 +4,25 @@ header h1 {
 .bg-sky {
     background-color: #29B1DD;
 }
+.bg-lightgrey {
+    background-color: #DDDDDD;
+}
 
 .icon-container {
     width: 100vw;
     height: 70px;
 }
+.card-container {
+    padding: 10px;
+}
+
+.animal-card {
+    height: 100px;
+    background-color: white;
+}
+/* .animal-card i{
+    font-size: 10px;
+}
+.animal-card h6 {
+    font-size: 10px;
+} */
