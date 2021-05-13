@@ -1,100 +1,100 @@
 const cardList = [
-	{
-		name: 'cat',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'crow',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'dog',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'dove',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'dragon',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'horse',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'hippo',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'fish',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'carrot',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'apple-alt',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'lemon',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'pepper-hot',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'user-astronaut',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	},
-	{
-		name: 'user-graduate',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	},
-	{
-		name: 'user-ninja',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	},
-	{
-		name: 'user-secret',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	}
+    {
+        name: 'cat',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'crow',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'dog',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'dove',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'dragon',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'horse',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'hippo',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'fish',
+        prefix: 'fa-',
+        type: 'animal',
+        family: 'fas'
+    },
+    {
+        name: 'carrot',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'fas'
+    },
+    {
+        name: 'apple-alt',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'fas'
+    },
+    {
+        name: 'lemon',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'fas'
+    },
+    {
+        name: 'pepper-hot',
+        prefix: 'fa-',
+        type: 'vegetable',
+        family: 'fas'
+    },
+    {
+        name: 'user-astronaut',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'fas'
+    },
+    {
+        name: 'user-graduate',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'fas'
+    },
+    {
+        name: 'user-ninja',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'fas'
+    },
+    {
+        name: 'user-secret',
+        prefix: 'fa-',
+        type: 'user',
+        family: 'fas'
+    }
 ];
 
 /* Milestone 1:
@@ -106,11 +106,11 @@ Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disp
 //Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
 let iconSelect = document.getElementById("icon-selector");
 
-iconSelect.addEventListener("change", function() {
+iconSelect.addEventListener("change", function () {
     if (iconSelect.value == "all") {
         cardList.forEach(element => {
-            document.getElementById("animal-card").insertAdjacentHTML("beforeend", 
-            `      <div
+            document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+                `      <div
             class="
               animal-card
               rounded
@@ -125,9 +125,75 @@ iconSelect.addEventListener("change", function() {
             <h6>${element.name}</h6>
             </div>`
             );
-            
+
         });
-    } else {
-        console.log("sto comunque funzionando");
+    } else if (iconSelect.value == "animal") {
+        cardList.forEach(element => {
+            if (element.type == "animal") {
+                document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+                    `      <div
+                class="
+                  animal-card
+                  rounded
+                  d-flex
+                  flex-column
+                  justify-content-center
+                  align-items-center
+                  ${element.type}
+                "
+                >
+                <i class="${element.family} ${element.prefix}${element.name}"></i>
+                <h6>${element.name}</h6>
+                </div>`
+                );
+            }
+        })
+
+    }
+    else if (iconSelect.value == "vegetable") {
+        cardList.forEach(element => {
+            if (element.type == "vegetable") {
+                document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+                    `      <div
+                class="
+                  animal-card
+                  rounded
+                  d-flex
+                  flex-column
+                  justify-content-center
+                  align-items-center
+                  ${element.type}
+                "
+                >
+                <i class="${element.family} ${element.prefix}${element.name}"></i>
+                <h6>${element.name}</h6>
+                </div>`
+                );
+            }
+        })
+
+    }
+    else if (iconSelect.value == "user") {
+        cardList.forEach(element => {
+            if (element.type == "user") {
+                document.getElementById("animal-card").insertAdjacentHTML("beforeend",
+                    `      <div
+                class="
+                  animal-card
+                  rounded
+                  d-flex
+                  flex-column
+                  justify-content-center
+                  align-items-center
+                  ${element.type}
+                "
+                >
+                <i class="${element.family} ${element.prefix}${element.name}"></i>
+                <h6>${element.name}</h6>
+                </div>`
+                );
+            }
+        })
+
     }
 })
