@@ -1,0 +1,11 @@
+header h1 {
+    color: #29B1DD;
+}
+.bg-sky {
+    background-color: #29B1DD;
+}
+
+.icon-container {
+    width: 100vw;
+    height: 70px;
+}
