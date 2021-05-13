@@ -123,12 +123,13 @@ iconSelect.addEventListener("change", function () {
             "
             >
             <i class="${element.family} ${element.prefix}${element.name}"></i>
-            <h6>${element.name}</h6>
+            <h6 class="text-uppercase">${element.name}</h6>
             </div>`
             );
 
         });
     } else if (iconSelect.value == "animal") {
+/*         cardSelect.classList.toggle("justify-content-start"); */
         cardList.filter(element => {
             if (element.type == "animal") {
                 cardSelect.insertAdjacentHTML("beforeend",
@@ -144,7 +145,7 @@ iconSelect.addEventListener("change", function () {
                 "
                 >
                 <i class="${element.family} ${element.prefix}${element.name}"></i>
-                <h6>${element.name}</h6>
+                <h6 class="text-uppercase">${element.name}</h6>
                 </div>`
                 );
             }
@@ -152,7 +153,7 @@ iconSelect.addEventListener("change", function () {
 
     }
     else if (iconSelect.value == "vegetable") {
-        cardSelect.classList.add("justify-content-around");
+/*         cardSelect.classList.toggle("justify-content-between"); */
         cardList.filter(element => {
             if (element.type == "vegetable") {
                 cardSelect.insertAdjacentHTML("beforeend",
@@ -168,7 +169,7 @@ iconSelect.addEventListener("change", function () {
                 "
                 >
                 <i class="${element.family} ${element.prefix}${element.name}"></i>
-                <h6>${element.name}</h6>
+                <h6 class="text-uppercase">${element.name}</h6>
                 </div>`
                 );
             }
@@ -176,7 +177,7 @@ iconSelect.addEventListener("change", function () {
 
     }
     else if (iconSelect.value == "user") {
-        cardSelect.classList.add("justify-content-around");
+/*         cardSelect.classList.toggle("justify-content-between"); */
         cardList.filter(element => {
             if (element.type == "user") {
                 cardSelect.insertAdjacentHTML("beforeend",
@@ -192,7 +193,7 @@ iconSelect.addEventListener("change", function () {
                 "
                 >
                 <i class="${element.family} ${element.prefix}${element.name}"></i>
-                <h6>${element.name}</h6>
+                <h6 class="text-uppercase">${element.name}</h6>
                 </div>`
                 );
             }
