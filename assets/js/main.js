@@ -101,25 +101,33 @@ const cardList = [
 Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout.
  */
 
-cardList.forEach(element => {
-    document.getElementById("animal-card").insertAdjacentHTML("beforeend", 
-    `      <div
-    class="
-      animal-card
-      rounded
-      d-flex
-      flex-column
-      justify-content-center
-      align-items-center
-      ${element.type}
-    "
-    >
-    <i class="${element.family} ${element.prefix}${element.name}"></i>
-    <h6>${element.name}</h6>
-    </div>`
-    );
-    
-});
 
 
+//Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone
+let iconSelect = document.getElementById("icon-selector");
 
+iconSelect.addEventListener("change", function() {
+    if (iconSelect.value == "all") {
+        cardList.forEach(element => {
+            document.getElementById("animal-card").insertAdjacentHTML("beforeend", 
+            `      <div
+            class="
+              animal-card
+              rounded
+              d-flex
+              flex-column
+              justify-content-center
+              align-items-center
+              ${element.type}
+            "
+            >
+            <i class="${element.family} ${element.prefix}${element.name}"></i>
+            <h6>${element.name}</h6>
+            </div>`
+            );
+            
+        });
+    } else {
+        console.log("sto comunque funzionando");
+    }
+})
